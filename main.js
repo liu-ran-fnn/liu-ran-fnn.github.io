@@ -121,6 +121,103 @@
     });
   }
 
+  /* ---------- 背景音乐：涓流轻缓 Clement Rillet ---------- */
+  /* 右下角胶囊：循环播放，可随时关闭；开关与音量记在本地，
+     下次访问自动按上次的设置走（浏览器不允许自动播放时，
+     会在你第一次跟页面交互的瞬间自动补上）。 */
+  (function bgmPlayer() {
+    var box = document.getElementById('bgm');
+    var btn = document.getElementById('bgmBtn');
+    var audio = document.getElementById('bgmAudio');
+    var vol = document.getElementById('bgmVolume');
+    if (!box || !btn || !audio) return;
+
+    var panel = box.querySelector('.bgm-panel');
+    var label = box.querySelector('.bgm-label');
+    var KEY_ON = 'bgm.enabled';
+    var KEY_VOL = 'bgm.volume';
+
+    var readStore = function (k, fb) {
+      try {
+        var v = localStorage.getItem(k);
+        return v === null ? fb : v;
+      } catch (e) { return fb; }
+    };
+    var writeStore = function (k, v) {
+      try { localStorage.setItem(k, v); } catch (e) { /* 隐私模式下忽略 */ }
+    };
+
+    audio.loop = true;
+    box.hidden = false;
+
+    // 音频文件不存在 / 解码失败时，整个控件不显示
+    audio.addEventListener('error', function () { box.hidden = true; });
+    audio.addEventListener('ended', function () { /* loop 已兜底 */ });
+
+    var setUI = function (playing) {
+      btn.classList.toggle('playing', playing);
+      btn.setAttribute('aria-pressed', String(playing));
+      btn.title = playing ? '关闭背景音乐' : '播放背景音乐';
+      btn.setAttribute('aria-label', btn.title);
+      if (panel) panel.classList.toggle('paused', !playing);
+      if (label) label.textContent = playing ? '正在播放' : '已暂停';
+    };
+
+    // 音量
+    var savedVol = parseFloat(readStore(KEY_VOL, '55'));
+    if (isNaN(savedVol)) savedVol = 55;
+    audio.volume = savedVol / 100;
+    if (vol) {
+      vol.value = String(savedVol);
+      vol.addEventListener('input', function () {
+        audio.volume = Number(vol.value) / 100;
+        writeStore(KEY_VOL, vol.value);
+      });
+    }
+
+    var play = function () {
+      var p = audio.play();
+      if (p && p.catch) p.catch(function () { /* 自动播放被拦截，忽略 */ });
+    };
+
+    audio.addEventListener('play', function () { setUI(true); });
+    audio.addEventListener('pause', function () { setUI(false); });
+    setUI(!audio.paused);
+
+    // 首次交互补播（浏览器拦截自动播放时的兜底）
+    var EVENTS = ['pointerdown', 'keydown', 'touchstart'];
+    var detach = function () {
+      EVENTS.forEach(function (evt) { window.removeEventListener(evt, once); });
+    };
+    var once = function () {
+      if (audio.paused) play();
+      detach();
+    };
+
+    btn.addEventListener('click', function () {
+      detach();
+      if (audio.paused) {
+        play();
+        writeStore(KEY_ON, '1');
+      } else {
+        audio.pause();
+        writeStore(KEY_ON, '0');
+      }
+    });
+
+    // 上次的开关状态；从未设置过的话，默认尝试播放
+    if (readStore(KEY_ON, '1') !== '0') {
+      var p = audio.play();
+      if (p && p.catch) {
+        p.catch(function () {
+          EVENTS.forEach(function (evt) {
+            window.addEventListener(evt, once, { once: true, passive: true });
+          });
+        });
+      }
+    }
+  })();
+
   /* ---------- 移动端菜单 ---------- */
   var burger = document.getElementById('burger');
   var navLinks = document.getElementById('navLinks');
