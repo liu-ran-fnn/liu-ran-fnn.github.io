@@ -9,7 +9,7 @@
 <body style="position: relative;">
 
 <!-- ============ 导航 ============ -->
-<header class="nav" id="nav">
+<header class="nav scrolled" id="nav">
   <div class="wrap nav-inner">
     <a href="#home" class="brand">
       <span class="brand-dot"></span>
@@ -20,6 +20,7 @@
       <a href="#about">关于</a>
       <a href="#genshin">原神专区</a>
       <a href="#code">代码区</a>
+      <a href="#python">Python 笔记</a>
       <a href="#fun">整活日常</a>
       <a href="#friends">友链</a>
       <a href="#guestbook">互动专区</a>
@@ -37,7 +38,7 @@
   <!-- ============ Hero ============ -->
   <section class="hero" id="home">
     <div class="wrap hero-inner">
-      <div class="hero-text reveal">
+      <div class="hero-text reveal in">
         <span class="pill"><i class="pulse"></i> 目前可接洽新项目</span>
         <h1 style="">
           你好，我是稻草人，<br>
@@ -50,7 +51,7 @@
       </div>
 
       <!-- 头像：图片在 images/avatar.jpg，想换就替换这个文件或改 src -->
-      <div class="hero-visual reveal">
+      <div class="hero-visual reveal in">
         <div class="visual-card">
           <img class="avatar-art" src="images/avatar.jpg" alt="芙宁娜 Q 版头像">
         </div>
@@ -59,12 +60,13 @@
     </div>
 
     <!-- 首屏快速访问：想加新入口就复制一个 <a> 改 href 和目标区块的 id -->
-    <div class="wrap hero-quick reveal">
+    <div class="wrap hero-quick reveal in">
       <span class="quick-label">快速访问</span>
       <nav class="quick-links">
         <a href="#about"><i>👤</i>关于我</a>
         <a href="#genshin"><i>🌊</i>原神专区</a>
         <a href="#code"><i>💻</i>代码区</a>
+        <a href="#python"><i>🐍</i>Python 笔记</a>
         <a href="#fun"><i>🎨</i>日常整活</a>
         <a href="#contact"><i>✉️</i>联系我</a>
         <a href="#guestbook"><i>💬</i>互动专区</a>
@@ -81,20 +83,20 @@
   <!-- ============ 关于 ============ -->
   <section class="section" id="about">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal in">
         <span class="eyebrow">01 — 关于我</span>
         <h2>一个二次元宅子的自我介绍</h2>
       </div>
 
       <div class="about-grid">
-        <div class="about-copy reveal">
+        <div class="about-copy reveal in">
           <p style="white-space: pre-wrap;">白天写代码，晚上泡提瓦特——我是稻草人，一个标准配置的二次元宅子。 白天经常被代码折磨得怀疑人生，一个 bug 能卡到凌晨；但只要芙宁娜的立绘亮起来、 追的新番更新一集，人又能原地复活。原神是我玩得最久的游戏， 枫丹的水下世界能让我什么都不干逛上一整晚，截图文件夹里大半都是她。 番剧方面口味很杂，热血、日常、治愈都吃得下，遇到喜欢的角色还会回头去补原作。 所以我的日常大概是这样的：IDE 开着，原神挂着，耳机里放着番剧 OP， 三件事同时进行，哪一件都不肯落下。
 steam好友代码：671427056</p>
         </div>
       </div>
 
       <!-- 爱好：想增删就复制/删除 .hobby-item 这一行 -->
-      <div class="hobby reveal">
+      <div class="hobby reveal in">
         <span class="hobby-label">业余爱好</span>
         <div class="hobby-items">
           <span class="hobby-item">原神</span>
@@ -108,14 +110,14 @@ steam好友代码：671427056</p>
   <!-- ============ 原神专区 ============ -->
   <section class="section section-soft" id="genshin">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal in">
         <span class="eyebrow">02 — 原神专区</span>
         <h2 style="white-space: pre-wrap;">学习之外的提瓦特
 原神UID：286858701</h2>
         <p class="sec-sub">从蒙德一路走到枫丹，每个版本的剧情我都认真看完了。</p>
       </div>
 
-      <div class="gs-intro reveal">
+      <div class="gs-intro reveal in">
         <p>
           开始玩原神，最初是因为美术和音乐——枫丹水下世界的通透感、欧庇克莱歌剧院的光影，
           每一帧都值得截图存下来。后来越玩越觉得，它在剧情编排和情绪铺垫上确实有一套。
@@ -126,14 +128,14 @@ steam好友代码：671427056</p>
         </p>
       </div>
 
-      <div class="gs-meta reveal">
+      <div class="gs-meta reveal in">
         <div class="gs-meta-item"><strong>最爱角色</strong><span>芙宁娜</span></div>
         <div class="gs-meta-item"><strong>常驻地区</strong><span>枫丹</span></div>
         <div class="gs-meta-item"><strong>不开原神的时候</strong><span>在 CS2 打竞技</span></div>
       </div>
 
       <!-- ===== 芙宁娜模块：换成真实图片时，把 .furina-img 换成一个 <img class="furina-img" src="images/xxx.jpg"> ===== -->
-      <div class="furina reveal">
+      <div class="furina reveal in">
         <div class="furina-head">
           <h3>芙宁娜</h3>
           <p>关于她的东西，我基本都收着——图、截图，还有柜子上那点周边。</p>
@@ -195,7 +197,7 @@ steam好友代码：671427056</p>
   <!-- ============ 代码区（C 语言笔记） ============ -->
   <section class="section" id="code">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal in">
         <span class="eyebrow">03 — 代码区</span>
         <h2>我的 C 语言笔记</h2>
         <p class="sec-sub">平时在 VS 里写的学习代码和随堂记录，点开就能看全文，也可以直接下载源文件。</p>
@@ -204,7 +206,7 @@ steam好友代码：671427056</p>
       <div class="code-list">
 
         <!-- CODE-LIST-START -->
-        <details class="code-item reveal">
+        <details class="code-item reveal in">
           <summary>
             <span class="code-file">test.c</span>
             <span class="code-desc">课堂小练习</span>
@@ -235,7 +237,7 @@ steam好友代码：671427056</p>
 }</code></pre>
           </div>
         </details>
-        <details class="code-item reveal">
+        <details class="code-item reveal in">
           <summary>
             <span class="code-file">study.c</span>
             <span class="code-desc">C 语言学习笔记 · 主笔记</span>
@@ -2056,7 +2058,7 @@ steam好友代码：671427056</p>
 </code></pre>
           </div>
         </details>
-        <details class="code-item reveal">
+        <details class="code-item reveal in">
           <summary>
             <span class="code-file">stduy.c</span>
             <span class="code-desc">随手写的练习</span>
@@ -2087,27 +2089,280 @@ steam好友代码：671427056</p>
     </div>
   </section>
 
+  <!-- ============ Python 学习笔记区 ============ -->
+  <!-- 内容由 build_python_notes.py 从 C:\code python.py 生成，
+       跑一次脚本就会刷新下面的 PYTHON-LIST 区块。 -->
+  <section class="section section-soft" id="python">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">04 — Python 笔记</span>
+        <h2>我的 Python 学习笔记</h2>
+        <p class="sec-sub">
+          从 <code class="path-chip">C:\code python.py</code> 一键同步上来的练习代码，
+          按知识点分成小卡片，点开就能看，也能直接复制。
+        </p>
+        <div class="sec-actions">
+          <a class="dl-btn" href="notes/python-basics.py" download="python-basics.py">下载原始笔记 .py</a>
+          <span class="sec-hint">共 <b id="pyCount">8</b> 组 · 随本地文件更新</span>
+        </div>
+      </div>
+
+      <div class="code-list">
+        <!-- PYTHON-LIST-START -->
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">01 · while 循环求和</span>
+            <span class="code-desc">读入 n，把 1 到 n 累加起来</span>
+            <span class="code-meta">Python · 7 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 1–8 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-1">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-1">n = <span class="py-fn">int</span>(<span class="py-fn">input</span>())
+i = <span class="py-num">1</span>
+k = <span class="py-num">0</span>
+<span class="py-kw">while</span> i &lt;= n:
+    k += i
+    i += <span class="py-num">1</span>
+<span class="py-fn">print</span>(k)</code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">02 · for 循环与 range</span>
+            <span class="code-desc">range 含头不含尾，也能遍历字符串</span>
+            <span class="code-meta">Python · 7 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 10–19 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-2">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-2"><span class="py-kw">for</span> i <span class="py-kw">in</span> <span class="py-fn">range</span>(<span class="py-num">3</span>, <span class="py-num">10</span>):      <span class="py-com"># 3~9</span>
+    <span class="py-fn">print</span>(i)
+<span class="py-com"># range(m, n, s)：从 m 数到 n，不包含 n，每次间隔 s</span>
+
+s = <span class="py-str">&quot;tainboewn&quot;</span>
+<span class="py-kw">for</span> c <span class="py-kw">in</span> s:
+    <span class="py-fn">print</span>(c)</code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">03 · 格式化输出与切片</span>
+            <span class="code-desc">% 占位符、f-string，以及 s[start:end:step]</span>
+            <span class="code-meta">Python · 13 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 21–33 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-3">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-3">name = <span class="py-fn">input</span>()
+age = <span class="py-fn">int</span>(<span class="py-fn">input</span>())
+habby = <span class="py-fn">input</span>()
+
+s = <span class="py-str">&quot;name is %s,age is %d,habby is %s&quot;</span> % (name, age, habby)
+s2 = f<span class="py-str">&quot;name is {name},age is {age},habby is {habby}&quot;</span>
+<span class="py-fn">print</span>(s2)
+
+<span class="py-com"># 切片：s[start:end:step]，含头不含尾，step 为负表示倒序</span>
+<span class="py-fn">print</span>(s[<span class="py-num">0</span>:<span class="py-num">5</span>])
+<span class="py-fn">print</span>(s[:<span class="py-num">5</span>])
+<span class="py-fn">print</span>(s[<span class="py-num">5</span>:])
+<span class="py-fn">print</span>(s[::-<span class="py-num">1</span>])      <span class="py-com"># 从右到左打印</span></code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">04 · 列表的增、删、改</span>
+            <span class="code-desc">append / insert / pop / remove 和下标赋值</span>
+            <span class="code-meta">Python · 20 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 34–54 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-4">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-4">arr = []
+
+<span class="py-com"># append() 追加</span>
+arr.append(<span class="py-str">&#x27;zq&#x27;</span>)
+arr.append(<span class="py-str">&quot;tbw&quot;</span>)
+
+<span class="py-com"># insert() 在指定位置插入</span>
+arr.insert(<span class="py-num">1</span>, <span class="py-str">&#x27;fvv&#x27;</span>)
+<span class="py-fn">print</span>(arr)
+
+<span class="py-com"># pop(i) 删除指定索引，并返回被删除的元素</span>
+ret = arr.pop(<span class="py-num">1</span>)
+
+<span class="py-com"># remove() 按值删除</span>
+arr.remove(<span class="py-str">&quot;zq&quot;</span>)
+<span class="py-fn">print</span>(arr)
+
+<span class="py-com"># 修改</span>
+arr[<span class="py-num">2</span>] = <span class="py-str">&quot;zc&quot;</span>
+<span class="py-fn">print</span>(arr)</code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">05 · 遍历列表与排序</span>
+            <span class="code-desc">按下标改元素，sort 的 reverse 参数</span>
+            <span class="code-meta">Python · 12 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 55–69 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-5">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-5">arr = [<span class="py-str">&#x27;zq&#x27;</span>, <span class="py-str">&#x27;zc&#x27;</span>, <span class="py-str">&#x27;tb&#x27;</span>, <span class="py-str">&#x27;zt&#x27;</span>]
+<span class="py-kw">for</span> i <span class="py-kw">in</span> <span class="py-fn">range</span>(<span class="py-fn">len</span>(arr)):
+    x = arr[i]
+    <span class="py-kw">if</span> x.startswith(<span class="py-str">&#x27;z&#x27;</span>):
+        new = <span class="py-str">&#x27;l&#x27;</span> + x[<span class="py-num">1</span>]
+        arr[i] = new
+<span class="py-fn">print</span>(arr)
+
+nums = [<span class="py-num">14</span>, <span class="py-num">55</span>, <span class="py-num">6</span>, <span class="py-num">66</span>]
+nums.sort()
+nums.sort(reverse=<span class="py-kw">True</span>)     <span class="py-com"># reverse=True 变成降序</span>
+<span class="py-fn">print</span>(nums)</code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">06 · 字符串常用方法</span>
+            <span class="code-desc">split / replace / strip / upper / join 速查</span>
+            <span class="code-meta">Python · 23 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 70–108 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-6">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-6"><span class="py-com"># split()：按分隔符切割，切掉的部分就没了</span>
+a = <span class="py-str">&#x27;python_java_c_c#&#x27;</span>
+<span class="py-fn">print</span>(a.split(<span class="py-str">&quot;_java_&quot;</span>))
+
+<span class="py-com"># replace(old, new)</span>
+s = <span class="py-str">&#x27;zhang qiang&#x27;</span>
+<span class="py-fn">print</span>(s.replace(<span class="py-str">&#x27;zhang&#x27;</span>, <span class="py-str">&#x27;tain&#x27;</span>))
+
+<span class="py-com"># strip()：去掉两端空白（空格、\t、\n）</span>
+s = <span class="py-str">&#x27;  tain  bo   &#x27;</span>
+<span class="py-fn">print</span>(s.strip())
+<span class="py-fn">print</span>(s)
+
+<span class="py-com"># lower() / upper()</span>
+s = <span class="py-str">&#x27;tainbowen&#x27;</span>
+<span class="py-fn">print</span>(s.upper())
+<span class="py-fn">print</span>(s.lower())
+
+<span class="py-com"># join()：把列表拼成字符串</span>
+<span class="py-fn">print</span>(<span class="py-str">&#x27;_&#x27;</span>.join([<span class="py-str">&#x27;a&#x27;</span>, <span class="py-str">&#x27;b&#x27;</span>, <span class="py-str">&#x27;c&#x27;</span>]))
+
+<span class="py-com"># find() 找不到返回 -1，也可以用 &#x27;子串&#x27; in s 判断</span>
+<span class="py-com"># startswith() / endswith() / isdigit() / len()</span></code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">07 · 嵌套列表</span>
+            <span class="code-desc">用连续下标一层层取到里面的元素</span>
+            <span class="code-meta">Python · 5 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 109–114 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-7">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-7">arr = [<span class="py-str">&#x27;abc&#x27;</span>, <span class="py-str">&#x27;def&#x27;</span>, [<span class="py-str">&#x27;cao&#x27;</span>, <span class="py-str">&#x27;sb&#x27;</span>, [<span class="py-str">&#x27;md&#x27;</span>, <span class="py-str">&#x27;dd&#x27;</span>]]]
+<span class="py-fn">print</span>(arr[<span class="py-num">2</span>][<span class="py-num">2</span>][<span class="py-num">1</span>])
+
+arr[<span class="py-num">2</span>][<span class="py-num">2</span>][<span class="py-num">1</span>] = arr[<span class="py-num">2</span>][<span class="py-num">2</span>][<span class="py-num">1</span>].upper()
+<span class="py-fn">print</span>(arr[<span class="py-num">2</span>][<span class="py-num">2</span>][<span class="py-num">1</span>])</code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">08 · 踩坑：字符串没有 remove()</span>
+            <span class="code-desc">想删列表元素，得用 del 或重建列表</span>
+            <span class="code-meta">Python · 9 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 115–121 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-8">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-8">arr = [<span class="py-str">&#x27;zq&#x27;</span>, <span class="py-str">&#x27;zc&#x27;</span>, <span class="py-str">&#x27;tb&#x27;</span>, <span class="py-str">&#x27;zt&#x27;</span>]
+<span class="py-kw">for</span> i <span class="py-kw">in</span> <span class="py-fn">range</span>(<span class="py-fn">len</span>(arr)):
+    <span class="py-kw">if</span> arr[i].startswith(<span class="py-str">&#x27;z&#x27;</span>):
+        arr[i].remove()     <span class="py-com"># AttributeError：str 没有 remove()</span>
+<span class="py-fn">print</span>(arr)
+
+<span class="py-com"># 正确写法之一：del arr[i]</span>
+<span class="py-com"># 或者用列表推导式重建：</span>
+<span class="py-com"># arr = [x for x in arr if not x.startswith(&#x27;z&#x27;)]</span></code></pre>
+          </div>
+        </details>
+<!-- PYTHON-LIST-END -->
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 日常整活专区 ============ -->
   <!-- 以后加新动态：复制整个 <article class="fun-post reveal">...</article>，
        改日期、配文和图片即可，图片放 images/ 目录。 -->
   <section class="section" id="fun">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">04 — 日常整活</span>
+      <div class="sec-head reveal in">
+        <span class="eyebrow">05 — 日常整活</span>
         <h2>日常整活专区</h2>
         <p class="sec-sub">闲下来折腾的小玩意儿，按时间往下翻。</p>
       </div>
 
       <div class="fun-list">
-        <article class="fun-post reveal">
+        <article class="fun-post reveal in">
           <div class="fun-head">
             <time class="fun-date" datetime="2026-10-23">2026 年 10 月 23 日</time>
             <h3 class="fun-title">这太恐怖了</h3>
           </div>
-          <p class="fun-text">
-            桌面上 VS Code、Dev-C++、Visual Studio、Python IDLE 排成一排，中间还夹着个 GitHub Copilot——
-            写代码的路子太多，反而不知道该先点开哪个。
-          </p>
+          <p class="fun-text" style="white-space: pre-wrap;">桌面上 VS Code、Dev-C++、Visual Studio、Python IDLE 排成一排，中间还夹着个 GitHub Copilot</p>
           <div class="fun-gallery">
             <figure class="fun-fig">
               <img src="images/fun-5.jpg" alt="桌面上并排放着多个开发工具图标，GitHub Copilot 处于选中状态" loading="lazy">
@@ -2175,7 +2430,7 @@ steam好友代码：671427056</p>
   <section class="section contact" id="contact">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">05 — 联系我</span>
+        <span class="eyebrow">06 — 联系我</span>
         <h2>有想法？聊聊吧</h2>
         <p class="sec-sub" style="white-space: pre-wrap;">无论一起玩原神，还是来CS带我玩（打得非常菜，求带飞），都欢迎找我。​</p>
       </div>
@@ -2198,7 +2453,7 @@ steam好友代码：671427056</p>
   <section class="section" id="guestbook">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">06 — 互动专区</span>
+        <span class="eyebrow">07 — 互动专区</span>
         <h2>来这儿说两句</h2>
         <p class="sec-sub">用 GitHub 账号登录后即可留言，所有人都能看到。聊原神、聊芙宁娜，或者单纯打个招呼都行。</p>
       </div>
@@ -2210,7 +2465,7 @@ steam好友代码：671427056</p>
           <span class="gb-tip"><i>🙌</i>友善交流，拒绝引战</span>
         </div>
         <!-- Giscus 挂载点：参数在 main.js 顶部的 GISCUS 配置块里 -->
-        <div class="giscus-wrap" id="giscusWrap"></div>
+        <div class="giscus-wrap" id="giscusWrap"><p class="gb-loading">留言区加载中…</p><script src="https://giscus.app/client.js" async="" data-repo="liu-ran-fnn/frina" data-repo-id="R_kgDOU8i7KQ" data-category="General" data-category-id="DIC_kwDOU8i7Kc4DHFex" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></script></div>
       </div>
     </div>
   </section>
@@ -2219,7 +2474,7 @@ steam好友代码：671427056</p>
   <section class="section section-soft friends" id="friends">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">07 — 友情链接</span>
+        <span class="eyebrow">08 — 友情链接</span>
         <h2>朋友们的小站</h2>
         <p class="sec-sub">互访互推，欢迎到处逛逛。</p>
       </div>
@@ -2248,7 +2503,7 @@ steam好友代码：671427056</p>
 </footer>
 
 <!-- 背景音乐：涓流轻缓 Clement Rillet -->
-<div class="bgm" id="bgm" hidden>
+<div class="bgm" id="bgm">
   <div class="bgm-panel">
     <div class="bgm-info">
       <span class="bgm-label">正在播放</span>
@@ -2264,7 +2519,7 @@ steam好友代码：671427056</p>
     </div>
   </div>
 
-  <button class="bgm-btn" id="bgmBtn" type="button" aria-pressed="false" title="播放背景音乐" aria-label="播放背景音乐">
+  <button class="bgm-btn playing" id="bgmBtn" type="button" aria-pressed="true" title="关闭背景音乐" aria-label="关闭背景音乐">
     <span class="bgm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     <svg class="bgm-ico bgm-ico-note" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M9 17.8V5.4l10.5-2.2v12.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -2276,14 +2531,14 @@ steam好友代码：671427056</p>
     </svg>
   </button>
 
-  <audio id="bgmAudio" loop preload="auto">
+  <audio id="bgmAudio" loop="" preload="auto">
     <source src="audio/clement-rillet.m4a" type="audio/mp4">
     <source src="audio/clement-rillet.mp3" type="audio/mpeg">
   </audio>
 </div>
 
 <!-- 回到顶部按钮：滚动超过一屏后自动出现 -->
-<button class="to-top" id="toTop" type="button" aria-label="回到顶部" title="回到顶部">
+<button class="to-top show" id="toTop" type="button" aria-label="回到顶部" title="回到顶部">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M12 5.5 20 14M12 5.5 4 14M12 5.5V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </svg>

@@ -502,6 +502,31 @@ img.furina-img { width: 100%; height: auto; aspect-ratio: auto; padding: 0; disp
 .c-fn  { color: #0369a1; }
 .c-num { color: #b45309; }
 
+/* Python 语法高亮 */
+.py-com { color: #8a8a94; font-style: italic; }
+.py-str { color: #0a7c42; }
+.py-kw  { color: #4f46e5; font-weight: 600; }
+.py-fn  { color: #0369a1; }
+.py-num { color: #b45309; }
+
+/* Python 笔记区头部 */
+.path-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .88em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #eef0ff;
+  color: var(--accent);
+  border: 1px solid #e0e3ff;
+}
+.sec-actions {
+  margin-top: 20px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.sec-actions .dl-btn { text-decoration: none; }
+.sec-hint { font-size: 13px; color: var(--muted); }
+.sec-hint b { color: var(--text-2); font-weight: 650; }
+
 /* ===================== 友情链接 ===================== */
 .friends { text-align: center; }
 .friends .sec-head { margin-left: auto; margin-right: auto; }
