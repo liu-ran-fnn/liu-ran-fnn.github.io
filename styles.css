@@ -559,6 +559,8 @@ img.furina-img { width: 100%; height: auto; aspect-ratio: auto; padding: 0; disp
 .friend-info em { font-style: normal; font-size: 13px; color: var(--muted); }
 .friend-arrow { margin-left: auto; color: var(--muted); font-size: 15px; }
 
+.fun-gallery--stack { grid-template-columns: 1fr; }
+
 /* ===================== 回到顶部按钮 ===================== */
 .to-top {
   position: fixed; right: 26px; bottom: 26px; z-index: 60;
