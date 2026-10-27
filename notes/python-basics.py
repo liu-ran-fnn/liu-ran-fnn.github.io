@@ -113,18 +113,50 @@ arr[2][2][1]=arr[2][2][1].upper()
 print(arr[2][2][1])
 '''
 '''
-arr=['zq','zc','tb','zt']
-for i in range(len(arr)):
-    if arr[i].startswith('z'):
-        arr[i].remove()
+arr=['zq','zc','tb','fv']
+brr=[]
+for x in arr:
+    if x.startswith("z"):
+        brr.append(x)
+for i in brr:
+    arr.remove(i)
 print(arr)
-'''   
+'''
+#tuple 元组，是不可变的列表,用小括号
+'''
+arr=['zq']
+brr=("zq")
+crr=("zq",)
+print(type(arr))
+print(type(brr))
+print(type(crr))
+'''
+#set,set集合是无序的
+'''
+s={1,2,"jb",3}
+print(s)
+'''
+#要符合哈希计算，像int ,str,tuple,bool
+'''
+s=set()
+s.add("zq")
+s.add("fvv")
+print(s)
+#s.pop()
+s.remove("zq")
+print(s)
+#修改要先删除，再新增
+'''
 
-
-
-
-
-
+#交集，并集，差集
+s1={"zq","tbw","cz"}
+s2={"zq","fvv","jb"}
+print(s1 & s2)
+print(s1.intersection(s2))
+print(s1 | s2)
+print(s1.union(s2))
+print(s1-s2)
+print(s1.difference(s2))
 
 
 

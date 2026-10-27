@@ -2103,7 +2103,7 @@ steam好友代码：671427056</p>
         </p>
         <div class="sec-actions">
           <a class="dl-btn" href="notes/python-basics.py" download="python-basics.py">下载原始笔记 .py</a>
-          <span class="sec-hint">共 <b id="pyCount">8</b> 组 · 随本地文件更新</span>
+          <span class="sec-hint">共 <b id="pyCount">11</b> 组 · 随本地文件更新</span>
         </div>
       </div>
 
@@ -2317,27 +2317,111 @@ arr[<span class="py-num">2</span>][<span class="py-num">2</span>][<span class="p
 
         <details class="code-item reveal">
           <summary>
-            <span class="code-file">08 · 踩坑：字符串没有 remove()</span>
-            <span class="code-desc">想删列表元素，得用 del 或重建列表</span>
+            <span class="code-file">08 · 边遍历边删元素</span>
+            <span class="code-desc">先收集要删的，再统一 remove</span>
+            <span class="code-meta">Python · 12 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 115–124 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-8">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-8">arr = [<span class="py-str">&#x27;zq&#x27;</span>, <span class="py-str">&#x27;zc&#x27;</span>, <span class="py-str">&#x27;tb&#x27;</span>, <span class="py-str">&#x27;fv&#x27;</span>]
+brr = []
+<span class="py-kw">for</span> x <span class="py-kw">in</span> arr:
+    <span class="py-kw">if</span> x.startswith(<span class="py-str">&quot;z&quot;</span>):
+        brr.append(x)
+
+<span class="py-kw">for</span> i <span class="py-kw">in</span> brr:
+    arr.remove(i)
+<span class="py-fn">print</span>(arr)
+
+<span class="py-com"># 直接写 arr[i].remove() 会报 AttributeError：</span>
+<span class="py-com"># 字符串没有 remove()，要删的是列表里的元素</span></code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">09 · tuple 元组</span>
+            <span class="code-desc">不可变的列表，单元素要写 (&#x27;zq&#x27;,)</span>
+            <span class="code-meta">Python · 7 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 125–133 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-9">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-9">arr = [<span class="py-str">&#x27;zq&#x27;</span>]
+brr = (<span class="py-str">&quot;zq&quot;</span>)     <span class="py-com"># 只是加了括号的字符串</span>
+crr = (<span class="py-str">&quot;zq&quot;</span>,)    <span class="py-com"># 一个元素的元组，逗号不能省</span>
+
+<span class="py-fn">print</span>(<span class="py-fn">type</span>(arr))  <span class="py-com"># &lt;class &#x27;list&#x27;&gt;</span>
+<span class="py-fn">print</span>(<span class="py-fn">type</span>(brr))  <span class="py-com"># &lt;class &#x27;str&#x27;&gt;</span>
+<span class="py-fn">print</span>(<span class="py-fn">type</span>(crr))  <span class="py-com"># &lt;class &#x27;tuple&#x27;&gt;</span></code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">10 · set 集合</span>
+            <span class="code-desc">无序、元素必须可哈希，增删用 add / remove</span>
+            <span class="code-meta">Python · 14 行</span>
+            <span class="code-caret" aria-hidden="true"></span>
+          </summary>
+          <div class="code-body">
+            <div class="code-bar">
+              <span class="code-path">python.py · 134–149 行</span>
+              <span class="code-actions">
+                <button class="copy-btn" type="button" data-target="py-10">复制代码</button>
+              </span>
+            </div>
+            <pre class="code-block"><code id="py-10">s = {<span class="py-num">1</span>, <span class="py-num">2</span>, <span class="py-str">&quot;jb&quot;</span>, <span class="py-num">3</span>}
+<span class="py-fn">print</span>(s)            <span class="py-com"># 无序，打印顺序不固定</span>
+
+s = <span class="py-fn">set</span>()
+s.add(<span class="py-str">&quot;zq&quot;</span>)
+s.add(<span class="py-str">&quot;fvv&quot;</span>)
+<span class="py-fn">print</span>(s)
+
+<span class="py-com"># s.pop()</span>
+s.remove(<span class="py-str">&quot;zq&quot;</span>)
+<span class="py-fn">print</span>(s)
+
+<span class="py-com"># 集合元素要符合哈希计算：int、str、tuple、bool</span>
+<span class="py-com"># 想&quot;修改&quot;某个元素，只能先删再加</span></code></pre>
+          </div>
+        </details>
+
+        <details class="code-item reveal">
+          <summary>
+            <span class="code-file">11 · 集合的交、并、差</span>
+            <span class="code-desc">&amp; | - 三个运算符，以及对应的函数写法</span>
             <span class="code-meta">Python · 9 行</span>
             <span class="code-caret" aria-hidden="true"></span>
           </summary>
           <div class="code-body">
             <div class="code-bar">
-              <span class="code-path">python.py · 115–121 行</span>
+              <span class="code-path">python.py · 151–159 行</span>
               <span class="code-actions">
-                <button class="copy-btn" type="button" data-target="py-8">复制代码</button>
+                <button class="copy-btn" type="button" data-target="py-11">复制代码</button>
               </span>
             </div>
-            <pre class="code-block"><code id="py-8">arr = [<span class="py-str">&#x27;zq&#x27;</span>, <span class="py-str">&#x27;zc&#x27;</span>, <span class="py-str">&#x27;tb&#x27;</span>, <span class="py-str">&#x27;zt&#x27;</span>]
-<span class="py-kw">for</span> i <span class="py-kw">in</span> <span class="py-fn">range</span>(<span class="py-fn">len</span>(arr)):
-    <span class="py-kw">if</span> arr[i].startswith(<span class="py-str">&#x27;z&#x27;</span>):
-        arr[i].remove()     <span class="py-com"># AttributeError：str 没有 remove()</span>
-<span class="py-fn">print</span>(arr)
+            <pre class="code-block"><code id="py-11">s1 = {<span class="py-str">&quot;zq&quot;</span>, <span class="py-str">&quot;tbw&quot;</span>, <span class="py-str">&quot;cz&quot;</span>}
+s2 = {<span class="py-str">&quot;zq&quot;</span>, <span class="py-str">&quot;fvv&quot;</span>, <span class="py-str">&quot;jb&quot;</span>}
 
-<span class="py-com"># 正确写法之一：del arr[i]</span>
-<span class="py-com"># 或者用列表推导式重建：</span>
-<span class="py-com"># arr = [x for x in arr if not x.startswith(&#x27;z&#x27;)]</span></code></pre>
+<span class="py-fn">print</span>(s1 &amp; s2)                  <span class="py-com"># 交集</span>
+<span class="py-fn">print</span>(s1.intersection(s2))
+<span class="py-fn">print</span>(s1 | s2)                  <span class="py-com"># 并集</span>
+<span class="py-fn">print</span>(s1.union(s2))
+<span class="py-fn">print</span>(s1 - s2)                  <span class="py-com"># 差集</span>
+<span class="py-fn">print</span>(s1.difference(s2))</code></pre>
           </div>
         </details>
 <!-- PYTHON-LIST-END -->
